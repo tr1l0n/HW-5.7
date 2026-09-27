@@ -1,13 +1,14 @@
-import { useState } from 'react'
-import TaskList from './components/TaskList'
-function App() {
+import { Component } from 'react'
+import { TaskList } from './components/TaskList'
+export class App extends Component {
   
-
-  return (
-    <>
-     <TaskList/>
-    </>
-  )
+  render() {
+    return (
+      <>
+        <TaskList />
+      </>
+    )
+  }
 }
 
 export default App

@@ -1,5 +1,5 @@
 import { useState } from "react";
-function TaskList() {
+export const  TaskList = () => {
     const [task, setTask] = useState("");
     const [tasks, setTasks] = useState([]);
     function addItems() {
@@ -20,4 +20,3 @@ function TaskList() {
         </>
     )
 }
-export default TaskList
