@@ -1,22 +1,10 @@
-import { useState } from "react";
-export const  TaskList = () => {
-    const [task, setTask] = useState("");
-    const [tasks, setTasks] = useState([]);
-    function addItems() {
-        setTasks([...tasks, task]);
-        setTask("");
-    }
+
+export const  TaskList = ({tasks,onDelete}) => {
     return (
-        <>
-            <input type="text" placeholder="Enter the task" value={task} onChange={(event)=> setTask(event.target.value)}/>
-            <button onClick={addItems}>Add task</button>
-            <ul>
-                {tasks.map(item => (
-                    <li>-{item}
-                        <button onClick={()=>setTasks(tasks.filter(text=> text!==item))}>Delete</button>    
-                    </li>
-                ))}
-            </ul>
-        </>
+        <ul>Your tasks:
+            {tasks.map(task => (
+                <li key={task.id}>{task.text} <button onClick={()=> onDelete(task.id)}>Delete</button></li>
+            ))}
+        </ul>
     )
 }
